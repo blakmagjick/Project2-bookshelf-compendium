@@ -8,6 +8,7 @@ const PORT = process.env.PORT
 
 // IMPORT MODEL
 const Book = require('./models/books')
+const bookSeed = require('./models/seed')
 
 // MONGOOSE
 const mongoose = require('mongoose')
@@ -41,6 +42,20 @@ app.get('/', (req, res) => {
     res.send('Just lurking on the landing page')
     // Need to add home.ejs page here
 })
+
+// SEED PAGE
+app.post('/seed', (req, res) => {
+    console.log(bookSeed)
+    Book.insertMany(bookSeed,(err, books) => {
+    if (err){
+      console.log(err)
+    } else {
+    console.log("Added provided book data")
+    res.redirect('/books')
+        }
+    })
+})
+
 
 app.listen(PORT, () => {
     console.log(`Reading your books on port: ${PORT}`)

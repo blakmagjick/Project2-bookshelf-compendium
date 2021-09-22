@@ -7,8 +7,12 @@ const Book = require('../models/books')
 router.get('/', (req, res) => {
     console.log('Oh hai')
 })
-// GET /books/:id --> Show page, shows information about each book
 // GET /books/new --> Form to add a New book
+router.get('/new', (req, res) => {
+    res.render('new.ejs')
+})
+
+// GET /books/:id --> Show page, shows information about each book
 // POST /books --> Creates new book
 // DELETE /books/:id --> Deletes a book
 // GET /books/:id/edit --> Form to edit/add information to a book

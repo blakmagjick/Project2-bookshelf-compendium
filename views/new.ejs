@@ -1,3 +1,18 @@
 <%- include('./partials/header.ejs') %>
+<h1>Add a Book</h1>
+<form action='' method='POST'>
+    Title: <input type='text' id='title' name='title' /><br />
+    Author: <input type='text' id='author' name='author' /><br />
+    Series: <input type='text' id='series' name='series' /><br />
+    Cover: <input type='text' id='cover' name='cover' /><br />
+    Genre: <input type='text' id='genre' name='genre' /><br />
+    Tags: <input type='text' id='tags' name='tags' /><br />
+    Rating: <input type='text' id='rating' name='rating' /><br />
+    Notes: <input type='datafield' id='notes' name='notes' /><br />
+    Read?: <input type='checkbox' id='read' name='read' /><br />
+    Date Read: <input type='text' id='dateread' name='dateread' /><br /><br />
+    <input type='submit' value='Add'>
+</form>
+
 
 <%- include('./partials/footer.ejs') %>

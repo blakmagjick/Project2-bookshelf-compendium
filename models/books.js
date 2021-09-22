@@ -10,7 +10,7 @@ const bookSchema = new Schema({
     tags: [String],
     rating: {type: Number, min: 1, max: 5},
     notes: String,
-    read?: {type: Boolean, default: false},
+    read: {type: Boolean, default: false},
     dateRead: String
 })
 

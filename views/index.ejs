@@ -2,8 +2,16 @@
 <h1>Book Index</h1>
 <% for (let i = 0; i < books.length; i++) { %>
     <div class='book'>
-        <h5><%= books[i].name %></h5>
+        <% if (books[i].cover) { %>
+            <p><a href='/books/<%= books[i].id%>'><img src='<%= books[i].cover %>' height='150'></a></p>
+        <% } else { %>
+            <p><img src='/images/nophoto.png' height='150'></p>
+        <% } %>
+        
+        <p><%= books[i].title %></p>
         <p>by: <%= books[i].author %></p>
     </div>
 <% } %>
+<br />
+<a href='/books/new'>Add a Book</a>
 <%- include('./partials/footer.ejs') %>

@@ -7,6 +7,7 @@ require('dotenv').config()
 const PORT = process.env.PORT
 
 // IMPORT MODEL
+const Book = require('./models/books')
 
 // MONGOOSE
 const mongoose = require('mongoose')
@@ -36,7 +37,10 @@ const bookController = require('./controllers/bookController')
 app.use('/books', bookController)
 
 // HOME PAGE
-
+app.get('/', (req, res) => {
+    res.send('Just lurking on the landing page')
+    // Need to add home.ejs page here
+})
 
 app.listen(PORT, () => {
     console.log(`Reading your books on port: ${PORT}`)

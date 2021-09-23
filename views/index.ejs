@@ -13,7 +13,9 @@
     </div>
 <% } %>
 <br />
-<a href='/books/new'>Add a Book</a>
+<form action='/books/new'>
+    <input type="submit" value='Add a Book' />
+</form>
 <form action='/seed' method='POST'>
     <input type='submit' value='Seed Data'>
 </form>

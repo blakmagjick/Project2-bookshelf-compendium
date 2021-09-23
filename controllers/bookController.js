@@ -16,7 +16,9 @@ router.get('/new', (req, res) => {
 
 // GET /books/:id --> Show page, shows information about each book
 router.get('/:id', (req, res) => {
-    res.send('This will be the show page...')
+    Book.findById(req.params.id, (error, foundBook) => {
+        res.render('show.ejs', {book: foundBook})
+    })
 })
 
 // POST /books --> Creates new book

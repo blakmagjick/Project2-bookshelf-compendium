@@ -1,3 +1,11 @@
 <%- include('./partials/header.ejs') %>
-
+<img id='showbook' src='<%= book.cover %>' align='left'>
+<h1><%= book.title %></h1>
+<% if (book.series) { %>
+    <h5>(<%= book.series %>)</h5>
+<% } %>
+<p>By: <%= book.author %></p>
+<% if (book.translator) { %>
+    <p>Translated by: <%= book.translator %></p>
+<% } %>
 <%- include('./partials/footer.ejs') %>

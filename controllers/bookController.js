@@ -15,6 +15,9 @@ router.get('/new', (req, res) => {
 })
 
 // GET /books/:id --> Show page, shows information about each book
+router.get('/:id', (req, res) => {
+    res.send('This will be the show page...')
+})
 
 // POST /books --> Creates new book
 router.post('/', (req, res) => {

@@ -4,6 +4,7 @@ const {Schema, model} = mongoose
 const bookSchema = new Schema({
     title: {type: String, required: true},
     author: {type: String, required: true},
+    translator: String,
     series: String,
     cover: String,
     genre: String,

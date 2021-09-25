@@ -1,3 +1,4 @@
+const { application } = require('express')
 const express = require('express')
 const router = express.Router()
 const Book = require('../models/books')
@@ -39,9 +40,39 @@ router.post('/', (req, res) => {
 })
 
 // DELETE /books/:id --> Deletes a book
+router.delete('/:id', (req, res) => {
+    Book.findByIdAndDelete(req.params.id, (error, deletedBook) => {
+        if (error) {
+            console.log(error)
+            res.send(error)
+        } else {
+            res.redirect('/books')
+        }
+    })
+})
 
 // GET /books/:id/edit --> Form to edit/add information to a book
+router.get('/:id/edit', (req, res) => {
+    Book.findById(req.params.id, (error, editBook) => {
+        if (error) {
+            console.log(error)
+        } else {
+            res.render('edit.ejs', {book: editBook})
+        }
+    })
+})
 
 // PUT /books/:id --> Changes the information on the server from the edit page
+router.put('/:id', (req, res) => {
+    req.body.read = (req.body.read === 'on')
+    Book.findByIdAndUpdate(req.params.id, req.body, {new: true}, (error, updatedBook) => {
+        let bookID = req.params.id
+        if (error) {
+            console.log(error)
+        } else {
+            res.redirect(`/books/${bookID}`)
+        }
+    })
+})
 
 module.exports = router

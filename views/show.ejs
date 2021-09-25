@@ -1,18 +1,32 @@
 <%- include('./partials/header.ejs') %>
-<img id='showbook' src='<%= book.cover %>' align='left'>
-<h1><%= book.title %></h1>
-<% if (book.series) { %>
-    <h5>(<%= book.series %>)</h5>
-<% } %>
-<p>By: <%= book.author %></p>
-<% if (book.translator) { %>
-    <p>Translated by: <%= book.translator %></p>
-<% } %>
-
+<div class='container'>
+<div class='containerimage'><img class='containerimage' id='showbook' src='<%= book.cover %>'></div>
+    <div class='containertext'>
+    <h2><%= book.title %></h2>
+        <% if (book.series) { %>
+            <h5>(<%= book.series %>)</h5>
+        <% } %>
+        <p>By: <%= book.author %></p>
+        <% if (book.translator) { %>
+            <p>Translated by: <%= book.translator %></p>
+        <% } %>
+        <p>Genre: <%= book.genre %></p>
+        <p>Tags: <%= book.tags %></p>
+        <p>Rating: <%= book.rating %> stars</p>
+        <p>Notes: <%= book.notes %></p>
+        <% if (book.read) { %>
+            <p>Read: yes</p>
+        <% } else { %>
+            <p>Read: no</p>
+        <% } %>
+    </div>
+<div class='containerbuttons'>
 <form action='/books/<%= book.id %>/edit'>
     <input class='btn btn-dark' type='submit' value='Edit'>
 </form>
 <form action='/books/<%= book.id %>?_method=DELETE' method='POST'>
     <input class='btn btn-dark' type='submit' value='Delete'>
 </form>
+</div>
+</div>
 <%- include('./partials/footer.ejs') %>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
 header {
     overflow: hidden;
     padding-bottom: 20px;
@@ -10,28 +12,44 @@ body {
     background-color: #adb5bd;
     margin: 0 25px 25px 25px;
 }
+.override {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+p {
+    font-size: 1.3em;
+}
 .book {
     width: 150px;
     display: inline-block;
-}
-#showbook {
-    padding: 10px;
+    vertical-align: text-top;
+
 }
 footer {
     position: absolute; 
     bottom: 0;
 }
- /* .newformdiv label {
-    float:left;
-    width:10%;
-    text-align:left;
-    margin-right:5px;
-    margin-bottom:10px; 
-} */
-  /* .newformdiv input {
-    float:right;
-     width:40%; 
-} */
-/* label {
-    padding-bottom: 5px;
-}   */
+div {
+    display: inline-block;
+    max-width: 650px;
+}
+.container {
+  display: flex; 
+  position: fixed; 
+  left: 50px;
+} 
+.containerimage {
+    margin: 5px 40px 0 0;
+    width: 175px;
+}
+.containertext {
+    margin-right: 20px;
+    width: 400px;
+}
+.containerbuttons {
+    margin: 5px 40px 0 0;
+    width: 200px;
+}
+label {
+    width: 65px;
+    float: left;
+}  

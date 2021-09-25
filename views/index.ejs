@@ -1,5 +1,5 @@
 <%- include('./partials/header.ejs') %>
-<h1>Book Index</h1>
+<h1>All Books</h1>
 <% for (let i = 0; i < books.length; i++) { %>
     <div class='book'>
         <% if (books[i].cover) { %>
@@ -8,11 +8,11 @@
             <p><img src='/images/nophoto.png' height='140'></p>
         <% } %>
         
-        <p><strong><%= books[i].title %></strong></p>
-        <p>by: <%= books[i].author %></p>
+        <!-- <p><%= books[i].title %></p>
+        <p>by: <%= books[i].author %></p> -->
     </div>
 <% } %>
-<br />
+<br /><br />
 <form action='/books/new'>
     <input class='btn btn-dark' type="submit" value='Add a Book' />
 </form>

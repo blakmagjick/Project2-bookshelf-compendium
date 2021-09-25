@@ -2,18 +2,18 @@
 <h1>Add a Book</h1>
 <div class='newformdiv'>
 <form action='/books' method='POST'>
-    <label>Title:</label> <input type='text' id='title' name='title' /><br />
-    <label>Author:</label> <input type='text' id='author' name='author' /><br />
+    <label>Title:</label> <input type='text' id='title' name='title' />*<br />
+    <label>Author:</label> <input type='text' id='author' name='author' />*<br />
     <label>Series:</label> <input type='text' id='series' name='series' /><br />
     <label>Cover:</label> <input type='text' id='cover' name='cover' /><br />
     <label>Genre:</label> <input type='text' id='genre' name='genre' /><br />
     <label>Tags:</label> <input type='text' id='tags' name='tags' /><br />
     <label>Rating:</label> <input type='text' id='rating' name='rating' /><br />
     <label>Notes:</label> <input type='datafield' id='notes' name='notes' /><br />
-    <label>Read?:</label> <input type='checkbox' id='read' name='read' /><br />
-    <label>Date Read:</label> <input type='text' id='dateread' name='dateread' /><br /><br />
-    <input type='submit' value='Add'>
+    <label>Read?:</label> <input type='checkbox' id='read' name='read' /><br /><br />
+    <input class='btn btn-dark' type='submit' value='Add'>
 </form>
+<p><small>* are required fields</small></p>
 </div>
 
 

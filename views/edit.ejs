@@ -1,5 +1,5 @@
 <%- include('./partials/header.ejs') %>
-<h1>Edit: <%= book.title %></h1>
+<h1>Edit -- <%= book.title %></h1>
 
 <form action='/books/<%= book.id %>?_method=PUT' method='POST'>
     <label>Title:</label> <input type='text' id='title' name='title' value='<%= book.title %>' required/>*<br />
@@ -15,7 +15,7 @@
     <% if (book.read) { %>
         checked
     <% } %> /><br /><br />
-    <input class='btn btn-dark' type='submit' value='Edit'>
+    <input id='button' class='btn btn-dark' type='submit' value='Edit'>
 </form>
 <p><small>* are required fields</small></p>
 

@@ -6,9 +6,28 @@ const Book = require('../models/books')
 // ROUTES FROM PROPOSAL
 // GET /books --> Index page, gives a list of all the books
 router.get('/', (req, res) => {
-    Book.find({}, (error, allBooks) => {
-        res.render('index.ejs', {books: allBooks})
-    })
+    // console.log(req.query)
+    if (req.query.sort === 'asc' || req.query.sort === 'desc') {
+        Book.find({}).sort({title: req.query.sort}).exec((error, allBooks) => {
+            // console.log(allBooks, 'query')
+           return res.render('index.ejs', {books: allBooks})
+        })
+    // } else if (req.query.sort === 'author') {
+    //     Book.find({}).sort({author: asc}).exec((error, allBooks) => {
+    //        console.log(allBooks, 'author')
+    //        return res.render('index.ejs', {books: allBooks})
+    //     })
+    // } else if (req.query.sort === 'genre') {
+    //     Book.find({}).sort({genre: desc}).exec((error, allBooks) => {
+    //         console.log(allBooks, 'genre')
+    //         return res.render('index.ejs', {books: allBooks})
+    //      })
+    } else {
+        Book.find({}, (error, allBooks) => {
+            // console.log(allBooks, 'without')
+            return res.render('index.ejs', {books: allBooks})
+        })
+    }
 })
 // GET /books/new --> Form to add a New book
 router.get('/new', (req, res) => {

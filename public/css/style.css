@@ -24,13 +24,8 @@ p {
     vertical-align: text-top;
 
 }
-footer {
-    position: absolute; 
-    bottom: 0;
-}
 div {
     display: inline-block;
-    max-width: 650px;
 }
 .container {
   display: flex; 
@@ -43,7 +38,7 @@ div {
 }
 .containertext {
     margin-right: 20px;
-    width: 400px;
+    min-width: 350px;
 }
 .containerbuttons {
     margin: 5px 40px 0 0;
@@ -53,3 +48,9 @@ label {
     width: 65px;
     float: left;
 }  
+input {
+    width: 250px;
+}
+#button {
+    width: 80px;
+}

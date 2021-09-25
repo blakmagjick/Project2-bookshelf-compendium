@@ -14,8 +14,8 @@ As an app user, I want to be able to edit and delete books.
 ## MVP Goals
 [x] Add books to database\
 [ ] Look up books in database\
-[ ] Stylized\
-[ ] Partials for header & footer
+[x] Stylized\
+[x] Partials for header & footer
 
 ## Stretch Goals
 [ ] Dark mode\

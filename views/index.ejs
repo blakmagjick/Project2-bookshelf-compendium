@@ -1,5 +1,17 @@
 <%- include('./partials/header.ejs') %>
 <h1>All Books</h1>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Sort Options
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="/books">Default (order added)</a></li>
+      <li><a class="dropdown-item" href="/books?sort=asc">A to Z by Title</a></li>
+      <li><a class="dropdown-item" href="/books?sort=desc">Z to A by Title</a></li>
+      <li><a class="dropdown-item" href="/books?sort=author">A to Z by Author</a></li>
+      <li><a class="dropdown-item" href="/books?sort=genre">A to Z by Genre</a></li>
+    </ul>
+  </div><br /><br />
 <% for (let i = 0; i < books.length; i++) { %>
     <div class='book'>
         <% if (books[i].cover) { %>
@@ -7,16 +19,13 @@
         <% } else { %>
             <p><img src='/images/nophoto.png' height='140'></p>
         <% } %>
-        
-        <!-- <p><%= books[i].title %></p>
-        <p>by: <%= books[i].author %></p> -->
     </div>
 <% } %>
 <br /><br />
 <form action='/books/new'>
-    <input class='btn btn-dark' type="submit" value='Add a Book' />
+    <input id='button' class='btn btn-dark' type="submit" value='Add a Book' />
 </form>
 <form action='/seed' method='POST'>
-    <input class='btn btn-dark' type='submit' value='Seed Data'>
+    <input id='button' class='btn btn-dark' type='submit' value='Seed Data'>
 </form>
 <%- include('./partials/footer.ejs') %>

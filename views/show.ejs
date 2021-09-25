@@ -4,7 +4,7 @@
     <div class='containertext'>
     <h2><%= book.title %></h2>
         <% if (book.series) { %>
-            <h5>(<%= book.series %>)</h5>
+            <h4>(<%= book.series %>)</h4>
         <% } %>
         <p>By: <%= book.author %></p>
         <% if (book.translator) { %>
@@ -22,10 +22,13 @@
     </div>
 <div class='containerbuttons'>
 <form action='/books/<%= book.id %>/edit'>
-    <input class='btn btn-dark' type='submit' value='Edit'>
+    <input id='button' class='btn btn-dark' type='submit' value='Edit'>
 </form>
 <form action='/books/<%= book.id %>?_method=DELETE' method='POST'>
-    <input class='btn btn-dark' type='submit' value='Delete'>
+    <input id='button' class='btn btn-dark' type='submit' value='Delete'>
+</form>
+<form action='/books'>
+    <input id='button' class='btn btn-dark' type='submit' value='All Books'>
 </form>
 </div>
 </div>

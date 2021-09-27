@@ -22,6 +22,7 @@ As an app user, I want to be able to edit and delete books.
 [ ] Sign up/log in, so more people can use the app\
 [ ] Wish list model\
 [ ] Recommendations by genre
+[ ] Have the rating show up as stars
   
 ## Extra Stretch Goal
 [ ] Optimize for viewing on mobile

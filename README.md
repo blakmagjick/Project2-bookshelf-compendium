@@ -13,7 +13,7 @@ As an app user, I want to be able to edit and delete books.
 
 ## MVP Goals
 [x] Add books to database\
-[ ] Look up books in database\
+[x] Look up books in database\
 [x] Stylized\
 [x] Partials for header & footer
 

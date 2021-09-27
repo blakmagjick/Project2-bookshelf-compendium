@@ -3,7 +3,8 @@
 
 <form action='/books/<%= book.id %>?_method=PUT' method='POST'>
     <label>Title:</label> <input type='text' id='title' name='title' value='<%= book.title %>' required/>*<br />
-    <label>Author:</label> <input type='text' id='author' name='author' value='<%= book.author %>' required/>*<br />
+    <label>First Name:</label> <input type='text' id='authorFirst' name='authorFirst' value='<%= book.authorFirst %>' required/>*<br />
+    <label>Last Name:</label> <input type='text' id='authorLast' name='authorLast' value='<%= book.authorLast %>' required/>*<br />
     <label>Series:</label> <input type='text' id='series' name='series' value='<%= book.series %>' /><br />
     <label>Cover:</label> <input type='text' id='cover' name='cover' value='<%= book.cover %>' /><br />
     <label>Genre:</label> <input type='text' id='genre' name='genre' value='<%= book.genre %>' /><br />

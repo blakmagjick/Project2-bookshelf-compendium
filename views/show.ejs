@@ -6,7 +6,7 @@
         <% if (book.series) { %>
             <h4>(<%= book.series %>)</h4>
         <% } %>
-        <p>By: <%= book.author %></p>
+        <p>By: <%= book.authorFirst %> <%= book.authorLast %></p>
         <% if (book.translator) { %>
             <p>Translated by: <%= book.translator %></p>
         <% } %>

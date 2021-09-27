@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
            return res.render('index.ejs', {books: allBooks})
         })
     } else if (req.query.sort === 'author') {
-        Book.find({}).sort({author: 'asc'}).exec((error, allBooks) => {
+        Book.find({}).sort({authorLast: 'asc'}).exec((error, allBooks) => {
         //    console.log(allBooks, 'author')
            return res.render('index.ejs', {books: allBooks})
         })

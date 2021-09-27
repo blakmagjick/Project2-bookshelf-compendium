@@ -39,8 +39,7 @@ app.use('/books', bookController)
 
 // HOME PAGE
 app.get('/', (req, res) => {
-    res.send('Just lurking on the landing page')
-    // Need to add home.ejs page here
+    res.render('home.ejs')
 })
 
 // SEED PAGE

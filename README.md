@@ -23,6 +23,8 @@ As an app user, I want to be able to edit and delete books.
 [ ] Wish list model\
 [ ] Recommendations by genre
 [ ] Have the rating show up as stars
+[ ] List View
+[ ] Button to switch between table and list view
   
 ## Extra Stretch Goal
 [ ] Optimize for viewing on mobile

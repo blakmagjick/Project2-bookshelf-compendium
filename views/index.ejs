@@ -2,25 +2,26 @@
 <h1>All Books</h1>
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      Sort Options
+      Sort Books
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
       <li><a class="dropdown-item" href="/books">Default (order added)</a></li>
       <li><a class="dropdown-item" href="/books?sort=asc">A to Z by Title</a></li>
       <li><a class="dropdown-item" href="/books?sort=desc">Z to A by Title</a></li>
       <li><a class="dropdown-item" href="/books?sort=author">A to Z by Author</a></li>
-      <li><a class="dropdown-item" href="/books?sort=genre">A to Z by Genre</a></li>
     </ul>
   </div> <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-      Filter Options
+      Filter by Genre
     </button>
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-      <li><a class="dropdown-item" href="/books">Default (order added)</a></li>
+      <li><a class="dropdown-item" href="/books">Default (all genres)</a></li>
       <li><a class="dropdown-item" href="/books?genre=Fantasy">Fantasy</a></li>
-      <li><a class="dropdown-item" href="/books?genre=desc">Z to A by Title</a></li>
-      <li><a class="dropdown-item" href="/books?genre=author">A to Z by Author</a></li>
-      <li><a class="dropdown-item" href="/books?genre=genre">A to Z by Genre</a></li>
+      <li><a class="dropdown-item" href="/books?genre=Sci Fi">Sci Fi</a></li>
+      <li><a class="dropdown-item" href="/books?genre=Fiction">Fiction</a></li>
+      <li><a class="dropdown-item" href="/books?genre=Nonfiction">Nonfiction</a></li>
+      <li><a class="dropdown-item" href="/books?genre=Memoir">Memoir</a></li>
+      <li><a class="dropdown-item" href="/books?genre=Horror">Horror</a></li>
     </ul>
   </div><br /><br />
 <% for (let i = 0; i < books.length; i++) { %>

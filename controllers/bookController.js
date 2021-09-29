@@ -6,7 +6,6 @@ const Book = require('../models/books')
 // ROUTES FROM PROPOSAL
 // GET /books --> Index page, gives a list of all the books
 router.get('/', (req, res) => {
-    console.log(req.query)
     let order = {}
     let filter = {}
     if (req.query.sort === 'asc' || req.query.sort === 'desc') {
@@ -18,6 +17,7 @@ router.get('/', (req, res) => {
     }
     if (req.query.genre) {
         filter.genre = req.query.genre
+        order = {title: 'asc'}
     }
     Book.find(filter).sort(order).exec((error, allBooks) => {
         return res.render('index.ejs', {books: allBooks})

@@ -12,7 +12,20 @@
         <% } %>
         <p>Genre: <%= book.genre %></p>
         <p>Tags: <%= book.tags %></p>
-        <p>Rating: <%= book.rating %> stars</p>
+        <p>Rating: 
+            <%if (book.rating == 1) {%>
+                <img src="/images/smallstar.png" width="25px"> 
+            <%} else if (book.rating == 2) {%>
+                <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> 
+            <%} else if (book.rating == 3) {%>
+                <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> 
+            <%} else if (book.rating == 4) {%>
+                <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> 
+            <%} else if (book.rating == 5) {%>
+                <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> 
+            <% } %>
+        \
+    </p>
         <p>Notes: <%= book.notes %></p>
         <% if (book.read) { %>
             <p>Read: yes</p>

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const {Schema, model} = mongoose
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/books')
 
 const bookSchema = new Schema({
     title: {type: String, required: true},

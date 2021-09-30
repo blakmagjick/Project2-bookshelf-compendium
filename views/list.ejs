@@ -1,0 +1,46 @@
+<%- include('./partials/header.ejs') %>
+<h1>All Books</h1>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Sort Books
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="/books/list">Default (order added)</a></li>
+      <li><a class="dropdown-item" href="/books/list?sort=asc">A to Z by Title</a></li>
+      <li><a class="dropdown-item" href="/books/list?sort=desc">Z to A by Title</a></li>
+      <li><a class="dropdown-item" href="/books/list?sort=author">A to Z by Author</a></li>
+    </ul>
+  </div> <div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      Filter by Genre
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li><a class="dropdown-item" href="/books/list">Default (all genres)</a></li>
+      <li><a class="dropdown-item" href="/books/list?genre=Fantasy">Fantasy</a></li>
+      <li><a class="dropdown-item" href="/books/list?genre=Sci Fi">Sci Fi</a></li>
+      <li><a class="dropdown-item" href="/books/list?genre=Fiction">Fiction</a></li>
+      <li><a class="dropdown-item" href="/books/list?genre=Nonfiction">Nonfiction</a></li>
+      <li><a class="dropdown-item" href="/books/list?genre=Memoir">Memoir</a></li>
+      <li><a class="dropdown-item" href="/books/list?genre=Horror">Horror</a></li>
+    </ul>
+  </div><br />
+  <div id='views'>
+    <a href='/books'><img src="/images/grid.jpg" width='25px'></a>
+    <a href='/books/list'><img src="/images/list.jpg" width='25px'></a>
+  </div>
+  <br /><br />
+<ul>
+<% for (let i = 0; i < books.length; i++) { %>
+    <li>
+        <a href='/books/<%= books[i].id%>'><%= books[i].title %></a> by <%= books[i].authorFirst %> <%= books[i].authorLast %>
+    </li>
+<% } %>
+</ul>
+<br /><br />
+<form action='/books/new'>
+    <input id='button' class='btn btn-dark' type="submit" value='Add a Book' />
+</form>
+<form action='/seed' method='POST'>
+    <input id='button' class='btn btn-dark' type='submit' value='Seed Data'>
+</form>
+<%- include('./partials/footer.ejs') %>

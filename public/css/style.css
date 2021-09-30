@@ -18,11 +18,13 @@ body {
 p {
     font-size: 1.3em;
 }
+#views {
+    padding-top: 10px;
+}
 .book {
     width: 150px;
     display: inline-block;
     vertical-align: text-top;
-
 }
 div {
     display: inline-block;

@@ -23,9 +23,30 @@ router.get('/', (req, res) => {
         return res.render('index.ejs', {books: allBooks})
      })
 })
+
 // GET /books/new --> Form to add a New book
 router.get('/new', (req, res) => {
     res.render('new.ejs')
+})
+
+// GET /books/list --> Show list version of books
+router.get('/list', (req, res) => {
+    let order = {}
+    let filter = {}
+    if (req.query.sort === 'asc' || req.query.sort === 'desc') {
+        order = {title: req.query.sort}
+    } else if (req.query.sort === 'author') {
+        order = {authorLast: 'asc'}
+    } else if (req.query.sort === 'genre') {
+        order = [['genre', 'ascending'], ['author', 'ascending']]    
+    }
+    if (req.query.genre) {
+        filter.genre = req.query.genre
+        order = {title: 'asc'}
+    }
+    Book.find(filter).sort(order).exec((error, allBooks) => {
+        return res.render('list.ejs', {books: allBooks})
+     })
 })
 
 // GET /books/:id --> Show page, shows information about each book

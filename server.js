@@ -31,7 +31,27 @@ app.use(methodOverride('_method'))
 app.use(express.json())
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
-// const session = require('express-session') 
+
+// SESSIONS
+const session = require('express-session') 
+const SESSION_SECRET = process.env.SESSION_SECRET
+console.log('Here\'s SESSION_SECRET')
+console.log(SESSION_SECRET)
+
+app.use(
+    session ({
+        secret: SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false
+    })
+)
+
+// LOCAL VARIABLE ON ALL ROUTES
+app.use((req, res, next) => {
+    res.locals.currentUser = req.session.currentUser
+    next()
+})
+
 // session is only needed if I get to login/logout/auth in my stretch goal
 
 // CONTROLLERS

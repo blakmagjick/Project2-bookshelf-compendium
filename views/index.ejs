@@ -1,33 +1,37 @@
 <%- include('./partials/header.ejs') %>
 <h1>All Books</h1>
-<button id='regButton' type='button' class='btn btn-dark'>Register</button><button id='regButton' type='button' class='btn btn-dark'>Sign In</button>
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+<form id='regButton' action='/users/register'>
+  <input id='regButton' class='btn btn-dark' type='submit' value='Register' />
+</form><form id='regButton' action='/users/signin'>
+  <input id='regButton' class='btn btn-dark' type='submit' value='Sign In' />
+</form>
+<div class='dropdown'>
+  <button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>
     Sort Books
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="/books">Default (order added)</a></li>
-    <li><a class="dropdown-item" href="/books?sort=asc">A to Z by Title</a></li>
-    <li><a class="dropdown-item" href="/books?sort=desc">Z to A by Title</a></li>
-    <li><a class="dropdown-item" href="/books?sort=author">A to Z by Author</a></li>
+  <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+    <li><a class='dropdown-item' href='/books'>Default (order added)</a></li>
+    <li><a class='dropdown-item' href='/books?sort=asc'>A to Z by Title</a></li>
+    <li><a class='dropdown-item' href='/books?sort=desc'>Z to A by Title</a></li>
+    <li><a class='dropdown-item' href='/books?sort=author'>A to Z by Author</a></li>
   </ul>
-</div> <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+</div> <div class='dropdown'>
+  <button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>
     Filter by Genre
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="/books">Default (all genres)</a></li>
-    <li><a class="dropdown-item" href="/books?genre=Fantasy">Fantasy</a></li>
-    <li><a class="dropdown-item" href="/books?genre=Sci Fi">Sci Fi</a></li>
-    <li><a class="dropdown-item" href="/books?genre=Fiction">Fiction</a></li>
-    <li><a class="dropdown-item" href="/books?genre=Nonfiction">Nonfiction</a></li>
-    <li><a class="dropdown-item" href="/books?genre=Memoir">Memoir</a></li>
-    <li><a class="dropdown-item" href="/books?genre=Horror">Horror</a></li>
+  <ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+    <li><a class='dropdown-item' href='/books'>Default (all genres)</a></li>
+    <li><a class='dropdown-item' href='/books?genre=Fantasy'>Fantasy</a></li>
+    <li><a class='dropdown-item' href='/books?genre=Sci Fi'>Sci Fi</a></li>
+    <li><a class='dropdown-item' href='/books?genre=Fiction'>Fiction</a></li>
+    <li><a class='dropdown-item' href='/books?genre=Nonfiction'>Nonfiction</a></li>
+    <li><a class='dropdown-item' href='/books?genre=Memoir'>Memoir</a></li>
+    <li><a class='dropdown-item' href='/books?genre=Horror'>Horror</a></li>
   </ul>
 </div><br />
 <div id='views'>
-  <a href='/books'><img src="/images/grid.jpg" width='25px'></a>
-  <a href='/books/list'><img src="/images/list.jpg" width='25px'></a>
+  <a href='/books'><img src='/images/grid.jpg' width='25px'></a>
+  <a href='/books/list'><img src='/images/list.jpg' width='25px'></a>
 </div>
 <br /><br />
 <% for (let i = 0; i < books.length; i++) { %>
@@ -41,7 +45,7 @@
 <% } %>
 <br /><br />
 <form action='/books/new'>
-    <input id='button' class='btn btn-dark' type="submit" value='Add a Book' />
+    <input id='button' class='btn btn-dark' type='submit' value='Add a Book' />
 </form>
 <!-- <form action='/seed' method='POST'>
     <input id='button' class='btn btn-dark' type='submit' value='Seed Data'>

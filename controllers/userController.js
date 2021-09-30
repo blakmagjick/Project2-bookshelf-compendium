@@ -10,8 +10,10 @@ router.get('/register', (req, res) => {
 
 // Post Route for Register Page
 
-
 // Signin Route
+router.get('/signin', (req, res) => {
+    res.render('users/signin.ejs')
+})
 
 // Confirm Signin Credentials
 

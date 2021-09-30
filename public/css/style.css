@@ -18,7 +18,8 @@ body {
 }
 #regButton {
     float: right;
-    margin-right: 30px;
+    margin-right: 20px;
+    width: 75px;
 }
 p {
     font-size: 1.3em;

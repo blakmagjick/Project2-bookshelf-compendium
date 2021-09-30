@@ -19,13 +19,22 @@ As an app user, I want to be able to edit and delete books.
 
 ## Stretch Goals
 [ ] Dark mode\
-[x] Filtering by Genre\
-[ ] Sign up/log in, so more people can use the app\
+[ ] Sign up/log in\
 [ ] Wish list model\
 [ ] Recommendations by genre\
+  
+## Suggestions from others
+[x] Filtering by Genre\
 [x] Have the rating show up as stars\
 [x] List View\
-[x] Button to switch between table and list view
-  
+[x] Button to switch between table and list view\
+[x] Add background photo of book pages\
+[ ] Add ISBN to Schema\
+[ ] Add Open Library API so most of the covers of the books can be added automatically (https://openlibrary.org/dev/docs/api/covers)\
+
 ## Extra Stretch Goal
-[ ] Optimize for viewing on mobile
+[ ] Optimize for viewing on mobile\
+
+## Bugs/Issues Found (by friends) & Fixed
+[x] When a book has no cover, you can't click it to go to the show page\
+[ ] New background image makes it hard to see the books, suggested adding a border\

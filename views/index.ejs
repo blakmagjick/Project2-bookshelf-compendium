@@ -37,9 +37,9 @@
 <% for (let i = 0; i < books.length; i++) { %>
     <div class='book'>
         <% if (books[i].cover) { %>
-            <p><a href='/books/<%= books[i].id%>'><img src='<%= books[i].cover %>' title='<%= books[i].title %> | By: <%= books[i].authorLast %> | <%= books[i].genre%>' height='140'></a></p>
+            <p><a href='/books/<%= books[i].id%>'><img class='bookpic' src='<%= books[i].cover %>' title='<%= books[i].title %> | By: <%= books[i].authorLast %> | <%= books[i].genre%>' height='140'></a></p>
         <% } else { %>
-            <p><img src='/images/nophoto.png' height='140'></p>
+            <p><a href='/books/<%= books[i].id%>'><img class='bookpic' src='/images/nophoto.png' height='140'></a></p>
         <% } %>
     </div>
 <% } %>

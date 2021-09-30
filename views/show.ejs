@@ -1,6 +1,12 @@
 <%- include('./partials/header.ejs') %>
 <div class='container'>
-<div class='containerimage'><img class='containerimage' id='showbook' src='<%= book.cover %>'></div>
+<div class='containerimage'>
+    <% if (book.cover) { %>
+        <img class='containerimage bookpic' id='showbook' src='<%= book.cover %>'>
+    <% } else { %>
+        <img class='bookpic' src='/images/nophoto.png'>
+    <% } %> 
+</div>
     <div class='containertext'>
     <h2><%= book.title %></h2>
         <% if (book.series) { %>

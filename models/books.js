@@ -9,6 +9,7 @@ const bookSchema = new Schema({
     translator: String,
     series: String,
     cover: String,
+    ISBN: String,
     genre: String,
     tags: [String],
     rating: {type: Number, min: 1, max: 5},

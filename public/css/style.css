@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
 
 header {
     overflow: hidden;
@@ -11,6 +11,7 @@ header img {
 body {
     background: url('/images/bookpages2.png'); 
     background-repeat: repeat;
+    background-attachment: fixed;
     margin: 0 25px 25px 25px;
 }
 .override {
@@ -19,7 +20,7 @@ body {
 #regButton {
     float: right;
     margin-right: 20px;
-    width: 75px;
+    width: 80px;
 }
 p {
     font-size: 1.3em;
@@ -39,6 +40,9 @@ p {
 }
 div {
     display: inline-block;
+}
+#value {
+    width: 77px;
 }
 .container {
   display: flex; 
@@ -65,5 +69,5 @@ input {
     width: 250px;
 }
 #button {
-    width: 80px;
+    width: 85px;
 }

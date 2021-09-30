@@ -5,6 +5,9 @@
 </form><form id='regButton' action='/users/signin'>
   <input id='regButton' class='btn btn-dark' type='submit' value='Sign In' />
 </form>
+<form id='regButton' action='/books/new'>
+  <input id='regButton' class='btn btn-dark' type='submit' value='AddBook' />
+</form>
 <div class='dropdown'>
   <button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>
     Sort Books
@@ -28,8 +31,7 @@
     <li><a class='dropdown-item' href='/books?genre=Memoir'>Memoir</a></li>
     <li><a class='dropdown-item' href='/books?genre=Horror'>Horror</a></li>
   </ul>
-</div><br />
-<div id='views'>
+</div>&nbsp&nbsp&nbsp<div id='views'>
   <a href='/books'><img src='/images/grid.jpg' width='25px'></a>
   <a href='/books/list'><img src='/images/list.jpg' width='25px'></a>
 </div>
@@ -39,14 +41,11 @@
         <% if (books[i].cover) { %>
             <p><a href='/books/<%= books[i].id%>'><img class='bookpic' src='<%= books[i].cover %>' title='<%= books[i].title %> | By: <%= books[i].authorLast %> | <%= books[i].genre%>' height='140'></a></p>
         <% } else { %>
-            <p><a href='/books/<%= books[i].id%>'><img class='bookpic' src='/images/nophoto.png' height='140'></a></p>
+            <p><a href='/books/<%= books[i].id%>'><img class='bookpic' src='/images/nophoto.png' title='<%= books[i].title %> | By: <%= books[i].authorLast %> | <%= books[i].genre%>' height='140'></a></p>
         <% } %>
     </div>
 <% } %>
 <br /><br />
-<form action='/books/new'>
-    <input id='button' class='btn btn-dark' type='submit' value='Add a Book' />
-</form>
 <!-- <form action='/seed' method='POST'>
     <input id='button' class='btn btn-dark' type='submit' value='Seed Data'>
 </form> -->

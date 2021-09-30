@@ -22,6 +22,7 @@ As an app user, I want to be able to edit and delete books.
 [ ] Sign up/log in\
 [ ] Wish list model\
 [ ] Recommendations by genre\
+[ ] Optimize for viewing on mobile\
   
 ## Suggestions from others
 [x] Filtering by Genre\
@@ -29,12 +30,9 @@ As an app user, I want to be able to edit and delete books.
 [x] List View\
 [x] Button to switch between table and list view\
 [x] Add background photo of book pages\
-[ ] Add ISBN to Schema\
+[ ] Add ISBN to Schema, and relative pages\
 [ ] Add Open Library API so most of the covers of the books can be added automatically (https://openlibrary.org/dev/docs/api/covers)\
-
-## Extra Stretch Goal
-[ ] Optimize for viewing on mobile\
 
 ## Bugs/Issues Found (by friends) & Fixed
 [x] When a book has no cover, you can't click it to go to the show page\
-[ ] New background image makes it hard to see the books, suggested adding a border\
+[x] New background image makes it hard to see the books, suggested adding a border\

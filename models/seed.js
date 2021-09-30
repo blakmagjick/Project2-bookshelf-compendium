@@ -72,7 +72,8 @@ module.exports = [
   authorLast: 'Cline',
   series: 'Ready Player One #1',
   cover: '/images/playerone.png',
-  genre: 'Science Fiction',
+  ISBN: '9780307887443',
+  genre: 'Sci Fi',
   tags: ['YA'],
   rating: 5,
   notes: 'The book was better',
@@ -234,6 +235,7 @@ module.exports = [
   authorLast: 'Bradley',  
   series: 'Flavia de Luce #10',
   cover: '/images/goldentresses.png',
+  ISBN: '9783764531157',
   genre: 'Mystery',
   tags: ['Historical Fiction'],
   rating: 4
@@ -302,6 +304,7 @@ module.exports = [
   authorLast: 'Carriger',
   series: 'Finishing School #1',
   cover: '/images/etiquette.png',
+  ISBN: '1925579875',
   genre: 'Fantasy',
   tags: ['Historical', 'Paranormal'],
   rating: 4

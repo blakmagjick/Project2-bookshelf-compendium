@@ -10,6 +10,7 @@ router.get('/register', (req, res) => {
 
 // Post Route for Register Page
 
+
 // Signin Route
 
 // Confirm Signin Credentials

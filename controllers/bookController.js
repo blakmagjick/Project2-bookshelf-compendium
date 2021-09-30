@@ -2,6 +2,15 @@ const express = require('express')
 const router = express.Router()
 const Book = require('../models/books')
 
+// Custom middleware - needed to require authentication on routes
+const authRequired = (req, res, next) => {
+    if (req.session.currentUser) {
+        next()
+    } else {
+        res.send('You must be logged in to do that!')
+    }
+}
+
 // ROUTES FROM PROPOSAL
 // GET /books --> Index page, gives a list of all the books
 router.get('/', (req, res) => {

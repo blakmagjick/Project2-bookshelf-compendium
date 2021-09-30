@@ -6,9 +6,10 @@ const app = express()
 require('dotenv').config()
 const PORT = process.env.PORT
 
-// IMPORT MODEL
+// IMPORT MODELS
 const Book = require('./models/books')
 const bookSeed = require('./models/seed')
+const User = require('./models/user')
 
 // MONGOOSE
 const mongoose = require('mongoose')
@@ -36,6 +37,9 @@ app.use(express.urlencoded({extended: true}))
 // CONTROLLERS
 const bookController = require('./controllers/bookController')
 app.use('/books', bookController)
+
+const userController = require('./controllers/userController')
+app.use('/users', userController)
 
 // HOME PAGE
 app.get('/', (req, res) => {

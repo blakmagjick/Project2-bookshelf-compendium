@@ -19,13 +19,13 @@ As an app user, I want to be able to edit and delete books.
 
 ## Stretch Goals
 [ ] Dark mode\
-[x] Filtering by Genre
+[x] Filtering by Genre\
 [ ] Sign up/log in, so more people can use the app\
 [ ] Wish list model\
-[ ] Recommendations by genre
-[x] Have the rating show up as stars
-[ ] List View
-[ ] Button to switch between table and list view
+[ ] Recommendations by genre\
+[x] Have the rating show up as stars\
+[x] List View\
+[x] Button to switch between table and list view
   
 ## Extra Stretch Goal
 [ ] Optimize for viewing on mobile

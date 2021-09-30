@@ -9,7 +9,8 @@ header img {
     transform: translateX(-50%);
 }
 body {
-    background-color: #adb5bd;
+    background: url('/images/bookpages2.png'); 
+    background-repeat: repeat;
     margin: 0 25px 25px 25px;
 }
 .override {

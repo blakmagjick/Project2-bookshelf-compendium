@@ -29,7 +29,7 @@ router.get('/new', (req, res) => {
     res.render('new.ejs')
 })
 
-// GET /books/list --> Show list version of books
+// GET /books/list --> Show text list version of books
 router.get('/list', (req, res) => {
     let order = {}
     let filter = {}

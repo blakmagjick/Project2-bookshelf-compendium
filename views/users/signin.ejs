@@ -1,4 +1,11 @@
 <%- include('../partials/header.ejs') %>
 <h1>Sign In</h1>
+<br />
+<form action='/users/signin' method='POST'>
+    <label id='value'>Username:</label> <input type='text' id='username' name='username' /><br />
+    <label id='value'>Password:</label> <input type='password' id='password' name='password' />
+    <br /><br />
+    <input id='button' class='btn btn-dark' type='submit' value='Sign In'>
+</form>
 
 <%- include('../partials/footer.ejs') %>

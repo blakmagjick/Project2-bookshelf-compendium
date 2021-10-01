@@ -1,12 +1,19 @@
 <%- include('./partials/header.ejs') %>
 <h1>All Books</h1>
-<form id='regButton' action='/users/register'>
-  <input id='regButton' class='btn btn-dark' type='submit' value='Register' />
-</form><form id='regButton' action='/users/signin'>
+</form><form id='regButton' action='/books/new'>
+  <input id='regButton' class='btn btn-dark' type='submit' value='AddBook' />
+</form>
+<% if (currentUser) { %>
+  <form id='regButton' action='/users/signout'>
+    <input id='regButton' class='btn btn-dark' type='submit' value='Sign Out' />
+  </form>
+<% } else { %>
+<form id='regButton' action='/users/signin'>
   <input id='regButton' class='btn btn-dark' type='submit' value='Sign In' />
 </form>
-<form id='regButton' action='/books/new'>
-  <input id='regButton' class='btn btn-dark' type='submit' value='AddBook' />
+<% } %>
+<form id='regButton' action='/users/register'>
+  <input id='regButton' class='btn btn-dark' type='submit' value='Register' />
 </form>
 <div class='dropdown'>
   <button class='btn btn-secondary dropdown-toggle' type='button' id='dropdownMenuButton1' data-bs-toggle='dropdown' aria-expanded='false'>

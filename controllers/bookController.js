@@ -7,7 +7,7 @@ const authRequired = (req, res, next) => {
     if (req.session.currentUser) {
         next()
     } else {
-        res.send('You must be logged in to do that!')
+        res.redirect('/users/signin')
     }
 }
 
@@ -33,7 +33,7 @@ router.get('/', (req, res) => {
 })
 
 // GET /books/new --> Form to add a New book
-router.get('/new', (req, res) => {
+router.get('/new', authRequired, (req, res) => {
     res.render('new.ejs')
 })
 
@@ -82,7 +82,7 @@ router.post('/', (req, res) => {
 })
 
 // DELETE /books/:id --> Deletes a book
-router.delete('/:id', (req, res) => {
+router.delete('/:id', authRequired, (req, res) => {
     Book.findByIdAndDelete(req.params.id, (error, deletedBook) => {
         if (error) {
             console.log(error)
@@ -94,7 +94,7 @@ router.delete('/:id', (req, res) => {
 })
 
 // GET /books/:id/edit --> Form to edit/add information to a book
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', authRequired, (req, res) => {
     Book.findById(req.params.id, (error, editBook) => {
         if (error) {
             console.log(error)

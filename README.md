@@ -40,7 +40,7 @@ Add New Book:\
 
 ## Stretch Goals
 [ ] Dark mode\
-[ ] Sign up/log in\
+[x] Sign up/log in\
 [ ] Wish list model\
 [ ] Recommendations by genre\
 [ ] Optimize for viewing on mobile
@@ -51,7 +51,7 @@ Add New Book:\
 [x] List View\
 [x] Button to switch between table and list view\
 [x] Add background photo of book pages\
-[ ] Add ISBN to Schema, and relative pages\
+[x] Add ISBN to Schema, and relative pages\
 [ ] Add Open Library API so most of the covers of the books can be added automatically (https://openlibrary.org/dev/docs/api/covers)
 
 ## Bugs/Issues Found (by friends) & Fixed

@@ -36,9 +36,27 @@ router.get('/signin', (req, res) => {
 })
 
 // Confirm Signin Credentials
+router.post('/signin', (req, res) => {
+    User.findOne({username: req.body.username}, (error, foundUser) => {
+        if (foundUser) {
+            const validLogin = bcrypt.compareSync(req.body.password, foundUser.password)
+            if (validLogin) {
+                req.session.currentUser = foundUser
+                res.redirect('/books')
+            } else {
+                res.send('Invalid username or password.')
+            }
+        } else {
+            res.send('Invalid username or password')
+        }
+    })
+})
 
-// Destory Session Route (Logout)
-
+// Destroy Session Route (Logout)
+router.get('/signout', (req, res) => {
+    req.session.destroy()
+    res.redirect('/books')
+})
 
 
 module.exports = router

@@ -1,5 +1,20 @@
 <%- include('./partials/header.ejs') %>
 <h1>All Books</h1>
+<form id='regButton' action='/books/new'>
+  <input id='regButton' class='btn btn-dark' type='submit' value='AddBook' />
+</form>
+<% if (currentUser) { %>
+  <form id='regButton' action='/users/signout'>
+    <input id='regButton' class='btn btn-dark' type='submit' value='Sign Out' />
+  </form>
+<% } else { %>
+<form id='regButton' action='/users/signin'>
+  <input id='regButton' class='btn btn-dark' type='submit' value='Sign In' />
+</form>
+<% } %>
+<form id='regButton' action='/users/register'>
+  <input id='regButton' class='btn btn-dark' type='submit' value='Register' />
+</form>
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
       Sort Books
@@ -32,15 +47,12 @@
 <ul>
 <% for (let i = 0; i < books.length; i++) { %>
     <li>
-        <a href='/books/<%= books[i].id%>'><%= books[i].title %></a> by <%= books[i].authorFirst %> <%= books[i].authorLast %>
+        <a class='link-secondary' href='/books/<%= books[i].id%>'><%= books[i].title %></a> by <%= books[i].authorFirst %> <%= books[i].authorLast %>
     </li>
 <% } %>
 </ul>
 <br /><br />
-<form action='/books/new'>
-    <input id='button' class='btn btn-dark' type="submit" value='Add a Book' />
-</form>
-<form action='/seed' method='POST'>
+<!-- <form action='/seed' method='POST'>
     <input id='button' class='btn btn-dark' type='submit' value='Seed Data'>
-</form>
+</form> -->
 <%- include('./partials/footer.ejs') %>

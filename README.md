@@ -52,8 +52,10 @@ Add New Book:\
 [x] Button to switch between table and list view\
 [x] Add background photo of book pages\
 [x] Add ISBN to Schema, and relative pages\
+[ ] Add "You must be logged in" message for Add/Edit/Delete
 [ ] Add Open Library API so most of the covers of the books can be added automatically (https://openlibrary.org/dev/docs/api/covers)
 
 ## Bugs/Issues Found (by friends) & Fixed
 [x] When a book has no cover, you can't click it to go to the show page\
-[x] New background image makes it hard to see the books, suggested adding a border
+[x] New background image makes it hard to see the books, suggested adding a border\
+[ ] When clicking a book on list view, if you hit the back button from the show page it goes to the cover view, and not the list view again. 

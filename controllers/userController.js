@@ -5,7 +5,7 @@ const User = require('../models/user')
 
 // Register Route
 router.get('/register', (req, res) => {
-    res.render('users/register.ejs')
+    res.render('users/register.ejs', {message: req.flash('message')})
 })
 
 // Post Route for Register Page
@@ -16,7 +16,8 @@ router.post('/register', (req, res) => {
 
     User.findOne({username: req.body.username}, (error, userExists) => {
         if (userExists) {
-            res.send('That username is taken. Please pick a new one and try again')
+            req.flash('message', 'Username already taken')
+            res.redirect('back')
         } else {
             User.create(req.body, (error, createUser) => {
                 if (error) {
@@ -32,7 +33,7 @@ router.post('/register', (req, res) => {
 
 // Signin Route
 router.get('/signin', (req, res) => {
-    res.render('users/signin.ejs')
+    res.render('users/signin.ejs', {message1: req.flash('message1')})
 })
 
 // Confirm Signin Credentials
@@ -44,10 +45,12 @@ router.post('/signin', (req, res) => {
                 req.session.currentUser = foundUser
                 res.redirect('/books')
             } else {
-                res.send('Invalid username or password.')
+                req.flash('message1', 'Username or password are incorrect')
+                res.redirect('back')
             }
         } else {
-            res.send('Invalid username or password')
+            req.flash('message1', 'Username or password are incorrect')
+            res.redirect('back')
         }
     })
 })

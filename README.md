@@ -58,4 +58,4 @@ Add New Book:\
 ## Bugs/Issues Found (by friends) & Fixed
 [x] When a book has no cover, you can't click it to go to the show page\
 [x] New background image makes it hard to see the books, suggested adding a border\
-[ ] When clicking a book on list view, if you hit the back button from the show page it goes to the cover view, and not the list view again. 
+[x] When clicking a book on list view, if you hit the back button from the show page it goes to the cover view, and not the list view again. 

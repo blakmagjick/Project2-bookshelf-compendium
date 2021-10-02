@@ -11,7 +11,7 @@ const bookSchema = new Schema({
     cover: String,
     ISBN: String,
     genre: String,
-    tags: [String],
+    tags: {type: [String], default: 'None'},
     rating: {type: Number, min: 1, max: 5},
     notes: String,
     read: {type: Boolean, default: false}

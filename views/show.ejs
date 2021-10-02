@@ -16,7 +16,9 @@
         <% if (book.translator) { %>
             <p>Translated by: <%= book.translator %></p>
         <% } %>
-        <p>Genre: <%= book.genre %></p>
+        <% if (book.genre) { %>
+            <p>Genre: <%= book.genre %></p>
+        <% } %>
         <p>Tags: <%= book.tags %></p>
         <p>Rating: 
             <%if (book.rating == 1) {%>
@@ -29,9 +31,13 @@
                 <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> 
             <%} else if (book.rating == 5) {%>
                 <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> <img src="/images/smallstar.png" width="25px"> 
+            <% } else { %>
+                Not rated
             <% } %>
-    </p>
-        <p>Notes: <%= book.notes %></p>
+        </p>
+        <% if (book.notes) { %>
+            <p>Notes: <%= book.notes %></p>
+        <% } %>
         <% if (book.read) { %>
             <p>Read: yes</p>
         <% } else { %>
@@ -47,7 +53,7 @@
     <input id='button' class='btn btn-dark' type='submit' value='Delete'>
 </form>
 <form action='/books'>
-    <input id='button' class='btn btn-dark' type='submit' value='<-- Back'>
+    <button id='button' type="button" class='btn btn-dark' onclick="javascript:history.back()">← Back</button>
 </form>
 </div>
 </div>

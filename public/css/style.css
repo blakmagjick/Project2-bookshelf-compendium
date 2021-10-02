@@ -3,6 +3,9 @@
 #enterBook {
     margin-left: 175px;
 }
+#door {
+    width: 400px;
+}
 header {
     overflow: hidden;
     padding-bottom: 20px;
@@ -13,7 +16,7 @@ header img {
 }
 #bookshelf {
     float: right;
-    width: 275px;
+    width: 240px;
 }
 body {
     background: url('/images/bookpages2.png'); 

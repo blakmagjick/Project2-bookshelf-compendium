@@ -52,7 +52,8 @@ Add New Book:\
 [x] Button to switch between table and list view\
 [x] Add background photo of book pages\
 [x] Add ISBN to Schema, and relative pages\
-[ ] Add "You must be logged in" message for Add/Edit/Delete
+[ ] Firebase, from Google\
+[ ] Add "You must be logged in" message for Add/Edit/Delete\
 [ ] Add Open Library API so most of the covers of the books can be added automatically (https://openlibrary.org/dev/docs/api/covers)
 
 ## Bugs/Issues Found (by friends) & Fixed
